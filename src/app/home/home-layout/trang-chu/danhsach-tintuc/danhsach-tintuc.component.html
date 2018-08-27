@@ -1,0 +1,13 @@
+<div class="ds-phim">
+  <h1 class="text-center display-4 py-5">
+    <span class="mx-5 title" [ngClass]="{'text-success': statucTinTuc === 'dienanh'}" (click)="ShowDienAnh()">Điện Ảnh</span>
+    <span class="mx-5 title" [ngClass]="{'text-success': statucTinTuc === 'review'}" (click)="ShowReview()">Review</span>
+    <span class="mx-5 title" [ngClass]="{'text-success': statucTinTuc === 'khuyenmai'}" (click)="ShowKhuyenMai()">Khuyến Mãi</span>
+  </h1>
+
+  <div [ngSwitch]="statucTinTuc">
+    <app-dienanh *ngSwitchCase="'dienanh'"></app-dienanh>
+    <app-review *ngSwitchCase="'review'"></app-review>
+    <app-khuyenmai *ngSwitchCase="'khuyenmai'"></app-khuyenmai>
+  </div>
+</div>

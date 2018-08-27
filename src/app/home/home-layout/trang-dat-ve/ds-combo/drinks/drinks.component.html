@@ -1,0 +1,5 @@
+<ul class="nav flex-column">
+  <li class="nav-item border-bottom text-left" *ngFor="let item of DsNuoc">
+    <app-item-combo [ItemDetail]="item" (emittedEvent)="eventDrinks($event,item)"></app-item-combo>
+  </li>
+</ul>

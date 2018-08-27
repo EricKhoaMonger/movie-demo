@@ -1,0 +1,90 @@
+<div class="row mt-5">
+  <div class="col-6">
+    <div class="alert alert-info">
+      <h3>Bắp rang</h3>
+      <div class="card">
+        <div class="card-body">
+          <app-popcorn></app-popcorn>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <h3>Combo Tết</h3>
+      <div class="card">
+        <div class="card-body">
+          <app-holiday-combo></app-holiday-combo>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <h3>Nước</h3>
+      <div class="card">
+        <div class="card-body">
+          <app-drinks></app-drinks>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <h4 class="text-center">
+      Item Đã Đặt
+    </h4>
+    <div class="row">
+      <div class="col-12" *ngIf="popCom.DsPopOrder.length">
+        <div class="card mb-3">
+          <div class="card-title bg-danger text-light py-3">
+            <h4>Bắp Rang</h4>
+          </div>
+          <div class="card-body">
+            <!-- <div class="row" *ngFor="let popItem of popCom.DsPopOrder">
+              <div class="col-4">
+                <img [src]="popItem.Hinh" alt="" style="width:80px">
+              </div>
+              <div class="col-6 text-left d-flex flex-column justify-content-center">
+                <p class="lead mb-0">{{popItem.Ten}}</p>
+                <p class="lead mb-0 text-primary">{{popItem.Gia}}</p>
+              </div>
+              <div class="col-2 d-flex align-items-center">
+                <span>X </span>
+              </div>
+            </div> -->
+            <div class="row" *ngFor="let popItem of popCom.DsPopOrder">
+              <div class="col-4">
+                <img [src]="popItem.Hinh" alt="" style="width:80px">
+              </div>
+              <div class="col-6 text-left d-flex flex-column justify-content-center">
+                <p class="lead mb-0">{{popItem.Ten}}</p>
+                <p class="lead mb-0 text-primary">{{popItem.Gia}}</p>
+              </div>
+              <div class="col-2 d-flex align-items-center">
+                <span>X </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="holidayCom.DsHolidayOrder.length">
+        <div class="card mb-3">
+          <div class="card-title bg-danger text-light py-3">
+            <h4>Combo Tết</h4>
+          </div>
+          <div class="card-body">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="drinkCom.DsDrinkOrder.length">
+        <div class="card">
+          <div class="card-title bg-danger text-light py-3">
+            <h4>Nước</h4>
+          </div>
+          <div class="card-body">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

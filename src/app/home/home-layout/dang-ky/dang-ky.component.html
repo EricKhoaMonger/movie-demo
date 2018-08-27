@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+
+      <form [formGroup]="dangkyFormGroup" (ngSubmit)="DangKy(dangkyFormGroup.value);dangkyFormGroup.reset()" novalidate>
+
+        <h4 class="display-4">Đăng Ký</h4>
+        <div class="form-group">
+          <label for="">Tài Khoản</label>
+          <input type="text" class="form-control" formControlName="TaiKhoan">
+        </div>
+        <!-- <div *ngIf="txtTaiKhoan.errors && (txtTaiKhoan.touched || txtTaiKhoan.dirty)" class="alert alert-warning my-2">
+          <p class="lead mb-0" *ngIf='txtTaiKhoan.errors.required'>Nhập Tài Khoản</p>
+        </div> -->
+        <div class="form-group">
+          <label for="">Mật Khẩu</label>
+          <input type="text" class="form-control" formControlName="MatKhau">
+          <!-- <div *ngIf="txtMatKhau.errors && (txtMatKhau.touched || txtMatKhau.dirty)" class="alert alert-warning my-2">
+            <p class="lead mb-0" *ngIf="txtMatKhau.errors.minlength || txtMatKhau.errors.maxlength">Độ dài MK từ 5-10</p>
+            <p class="lead mb-0" *ngIf="txtMatKhau.errors.required">Nhập MK</p>
+          </div> -->
+        </div>
+         <div class="form-group">
+          <label for="">Họ Tên: </label>
+          <input type="text" class="form-control" formControlName="HoTen">
+        </div>
+        <!--<div *ngIf="txtName.errors && (txtName.touched || txtName.dirty)" class="alert alert-warning my-2">
+            <p class="lead mb-0" *ngIf="txtName.errors.pattern">Tên sai format</p>
+            <p class="lead mb-0" *ngIf="txtName.errors.required">Nhập tên</p>
+          </div>-->
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="email" class="form-control" formControlName="Email">
+        </div>
+        <!--<div *ngIf="txtEmail.errors && (txtEmail.touched || txtEmail.dirty)" class="alert alert-warning my-2">
+          <p class="lead mb-0" *ngIf="txtEmail.errors.email ">Email incorrect</p>
+          <p class="lead mb-0" *ngIf="txtEmail.errors.required">Nhập email</p>
+        </div>-->
+        <div class="form-group">
+          <label for="">Số ĐT</label>
+          <input type="text" class="form-control" formControlName="SoDT">
+        </div>
+        <!--<div class="alert alert-danger" *ngIf="numPhone.errors && (numPhone.touched || numPhone.dirty)">
+          <p class="lead mb-0" *ngIf="numPhone.errors.required">Nhập Số DT</p>
+          <p class="lead mb-0" *ngIf="numPhone.errors.minlength || numPhone.errors.maxlength">Số đt từ 9 - 13</p>
+        </div>-->
+        <div class="form-group">
+          <label for="">Loại Người Dùng: </label>
+          <input type="radio" formControlName="MaLoaiNguoiDung" value="kh">Khách Hàng
+          <input type="radio" formControlName="MaLoaiNguoiDung" value="qtv">Quản Trị Viên
+        </div> 
+        <div class="form-group">
+          <button class="btn btn-success" type="submit" [disabled]="!dangkyFormGroup.valid">Đăng Ký</button>
+          <button class="btn btn-primary" type="button" (click)="CapNhat()">Cập Nhật</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-dark table-hover w-100 border-primary">
+        <thead>
+          <tr>
+            <th>Tai Khoan</th>
+            <th>MK</th>
+            <th>Ten</th>
+            <th>Email</th>
+            <th>SoDT</th>
+            <th>Ngay DK</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nguoiDung of DsNguoiDung">
+            <td>{{ nguoiDung.TaiKhoan }}</td>
+            <td>{{ nguoiDung.MatKhau }}</td>
+            <td>{{ nguoiDung.HoTen }}</td>
+            <td>{{ nguoiDung.Email }}</td>
+            <td>{{ nguoiDung.SoDT }}</td>
+            <td>{{ today | date:'dd/MM/yyyy' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="ds-phim">
+  <h1 class="text-center display-4 py-5">
+    <span class="mx-5 title" [ngClass]="{'text-success': danhSachStatus}" (click)="ShowDangChieu()">Đang Chiếu</span>
+    <span class="mx-5 title" [ngClass]="{'text-success': !danhSachStatus}" (click)="ShowSapChieu()">Sắp Chiếu</span>
+  </h1>
+  <app-phim-dangchieu *ngIf="danhSachStatus"></app-phim-dangchieu>
+  <app-phim-sapchieu *ngIf="!danhSachStatus" ></app-phim-sapchieu>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-2" *ngFor="let ghe of DsGheNgoi">
+    <app-ghe [GheItem]="ghe" (eventDatGhe)="DatGheParent($event,ghe)"></app-ghe>
+  </div>
+</div>
+<hr>
+<div class="col-12">
+  <div class="row">
+    <div class="col-6">
+      <p class="lead">Số Ghế Còn Trống: {{ soGheConLai }}</p>
+      <p class="lead">Số Ghế Đã Đặt: {{ soGheDaDat }}</p>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-12" *ngFor="let pending of DsGheDangDat">
+          <p class="lead">Số Ghế: {{ pending.SoGhe }}</p>
+          <p class="lead">Giá: {{ pending.Gia }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

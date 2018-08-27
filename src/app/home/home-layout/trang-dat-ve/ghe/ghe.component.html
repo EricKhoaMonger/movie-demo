@@ -1,0 +1,10 @@
+<button 
+  class="btn m-3"
+  (click)="DatGhe(status)"
+  [ngClass]="{'btn-danger':status,'btn-dark':!status}"
+  *ngIf="!GheItem.TrangThai; else GheDaDat"
+>{{GheItem.SoGhe}}</button>
+
+<ng-template #GheDaDat>
+  <button class="btn btn-danger m-3" disabled>{{GheItem.SoGhe}}</button>
+</ng-template>

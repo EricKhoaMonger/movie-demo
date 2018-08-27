@@ -1,0 +1,11 @@
+figure.effect-ruby h2{
+    margin-top: 0 !important;
+    padding: 5%;
+}
+.grid figure{
+    width: 100% !important;
+    height: 300px !important;
+}
+figure.effect-ruby p{
+    padding: 1em 3em !important;
+}

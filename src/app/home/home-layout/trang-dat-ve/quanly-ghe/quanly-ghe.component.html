@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center display-4 font-weight-bold pb-5">Quản lý ghế</h1>
+    <div class="form-group">
+      <input type="number" class="form-control" placeholder="Số Ghế" #so>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Tên Ghế" #ten>
+    </div>
+    <div class="form-group">
+      <input type="number" class="form-control" placeholder="Giá" #gia>
+    </div>
+    <button class="btn btn-warning" (click)="ThemGhe(so.value,ten.value,gia.value)">Thêm Ghế</button>
+  </div>
+</div>
+<app-ds-ghe></app-ds-ghe>
